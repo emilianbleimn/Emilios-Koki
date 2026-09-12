@@ -108,30 +108,34 @@
     counters.forEach((el) => co.observe(el));
   }
 
-  /* ---------- Interactive hero house ---------- */
-  const houseStage = $(".house-stage");
-  if (houseStage) {
-    const labels = {
-      dach: $(".zone-label[data-for='dach']", houseStage),
-      wand: $(".zone-label[data-for='wand']", houseStage),
-      boden: $(".zone-label[data-for='boden']", houseStage),
-      keller: $(".zone-label[data-for='keller']", houseStage),
+  /* ---------- Hero photo slider ---------- */
+  const slider = $("[data-slider]");
+  if (slider) {
+    const slides = $$(".slide", slider);
+    const dots = $$(".slider-dots button", slider);
+    let idx = 0, timer;
+    const go = (n) => {
+      idx = (n + slides.length) % slides.length;
+      slides.forEach((s, i) => s.classList.toggle("is-active", i === idx));
+      dots.forEach((d, i) => d.classList.toggle("is-active", i === idx));
     };
-    $$(".house-zone", houseStage).forEach((zone) => {
-      const key = zone.dataset.zone;
-      const show = () => { if (labels[key]) labels[key].classList.add("show"); zone.classList.add("active"); };
-      const hide = () => { if (labels[key]) labels[key].classList.remove("show"); zone.classList.remove("active"); };
-      zone.addEventListener("mouseenter", show);
-      zone.addEventListener("mouseleave", hide);
-      zone.addEventListener("focus", show);
-      zone.addEventListener("blur", hide);
-      zone.addEventListener("click", () => {
-        window.location.href = "konfigurator.html?bereich=" + key;
-      });
-      zone.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); zone.click(); }
-      });
-    });
+    const start = () => { if (!prefersReduced && slides.length > 1) timer = setInterval(() => go(idx + 1), 5000); };
+    const stop = () => clearInterval(timer);
+    dots.forEach((d, i) => d.addEventListener("click", () => { go(i); stop(); start(); }));
+    slider.addEventListener("mouseenter", stop);
+    slider.addEventListener("mouseleave", start);
+    start();
+  }
+
+  /* ---------- Back to top ---------- */
+  const toTop = $("#toTop");
+  if (toTop) {
+    const onScrollTop = () => toTop.classList.toggle("show", window.scrollY > 600);
+    window.addEventListener("scroll", onScrollTop, { passive: true });
+    onScrollTop();
+    toTop.addEventListener("click", () =>
+      window.scrollTo({ top: 0, behavior: prefersReduced ? "auto" : "smooth" })
+    );
   }
 
   /* ---------- Inquiry list (localStorage) ---------- */

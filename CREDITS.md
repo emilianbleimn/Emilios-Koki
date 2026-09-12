@@ -1,22 +1,19 @@
-# Bildnachweise
+# Bild- & Markennachweise
 
-Die auf dieser Website verwendeten Fotos stammen von [Pexels](https://www.pexels.com)
-und stehen unter der kostenlosen [Pexels-Lizenz](https://www.pexels.com/license/).
-Eine Namensnennung ist nicht erforderlich, wird hier aber dokumentiert
-(Datei — Pexels-Foto-ID):
+Alle Fotos, das Logo, die Bereichs-Icons und die Energieeffizienz-Grafik stammen
+von der bestehenden Website **bauer-daemmstoffe.de** und sind Eigentum von
+Dämmstoffe Bauer bzw. der jeweiligen Rechteinhaber. Sie wurden für diesen
+Website-Refresh übernommen und lediglich für das Web optimiert (Größe/Format).
 
-| Datei | Pexels-Foto-ID |
-|-------|----------------|
-| `assets/img/wand.jpg` | 30503925 |
-| `assets/img/dach.jpg` | 4482829 |
-| `assets/img/boden.jpg` | 8584020 |
-| `assets/img/keller.jpg` | 8488031 |
-| `assets/img/gallery-dach.jpg` | 8491084 |
-| `assets/img/gallery-fassade.jpg` | 5511085 |
-| `assets/img/gallery-wohnen.jpg` | 15794320 |
-| `assets/img/gallery-montage.jpg` | 37002230 |
-| `assets/img/effizienz.jpg` | 31854904 |
-| `assets/img/cta.jpg` | 34963015 |
+| Datei | Quelle / Inhalt |
+|-------|-----------------|
+| `assets/img/logo.png` | Original-Logo (freigestellt) – „Bauer · Fachhandel für Dämmstoffe“ |
+| `assets/img/store-01…04.jpg` | Original-Fotos des Lagers/Standorts (ehem. `head_01…04`) |
+| `assets/img/about-01…03.jpg` | Original-Fotos (ehem. `about_01…03`) |
+| `assets/img/energy.jpg` | Original-Grafik Energieeffizienz (A–G) |
+| `assets/img/zones/*.svg` | Original-Bereichs-Icons (Wand, Dach, Boden, Keller) |
+| `assets/img/mhv-systems.png` | Partnerlogo mhv systems |
+| `assets/img/gallardomedia.png` | Logo der Agentur Gallardo Media UG |
 
-> Hinweis: Die Bilder sind repräsentative Stockfotos. Für den finalen Auftritt
-> empfiehlt es sich, eigene Fotos der Produkte, des Ladens und realer Projekte zu verwenden.
+> Hinweis: Bitte vor Veröffentlichung sicherstellen, dass alle Nutzungsrechte an
+> den übernommenen Bildern und Logos vorliegen.

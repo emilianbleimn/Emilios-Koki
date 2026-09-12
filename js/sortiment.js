@@ -1,5 +1,5 @@
 /* =================================================================
-   Dämmstoffe Bauer — Sortiment-Filter
+   Dämmstoffe Bauer — Sortiment: Kategorie-Filter + Live-Suche
    ================================================================= */
 (function () {
   "use strict";
@@ -9,35 +9,44 @@
   const chips = $$(".chip");
   const products = $$(".product");
   const empty = $("#noResults");
-  if (!chips.length) return;
+  const search = $("#productSearch");
+  if (!chips.length && !search) return;
 
-  function apply(filter) {
+  let cat = "all";
+  let term = "";
+  const norm = (s) => (s || "").toLowerCase();
+
+  function apply() {
     let visible = 0;
     products.forEach((p) => {
-      const match = filter === "all" || p.dataset.cat === filter;
-      p.classList.toggle("hide", !match);
-      if (match) visible++;
+      const okCat = cat === "all" || p.dataset.cat === cat;
+      const okTerm = !term || norm(p.textContent).includes(term);
+      const show = okCat && okTerm;
+      p.classList.toggle("hide", !show);
+      if (show) visible++;
     });
     chips.forEach((c) => {
-      const on = c.dataset.filter === filter;
+      const on = c.dataset.filter === cat;
       c.classList.toggle("active", on);
       c.setAttribute("aria-pressed", String(on));
     });
     if (empty) empty.style.display = visible ? "none" : "block";
-    // keep URL shareable
+
     const url = new URL(location.href);
-    if (filter === "all") url.searchParams.delete("cat");
-    else url.searchParams.set("cat", filter);
+    if (cat === "all") url.searchParams.delete("cat");
+    else url.searchParams.set("cat", cat);
     history.replaceState(null, "", url);
   }
 
   chips.forEach((chip) =>
-    chip.addEventListener("click", () => apply(chip.dataset.filter))
+    chip.addEventListener("click", () => { cat = chip.dataset.filter; apply(); })
   );
+  if (search) {
+    search.addEventListener("input", () => { term = norm(search.value.trim()); apply(); });
+  }
 
-  // preselect from ?cat=
-  const params = new URLSearchParams(location.search);
-  const cat = params.get("cat");
-  const valid = chips.some((c) => c.dataset.filter === cat);
-  apply(valid ? cat : "all");
+  // preselect category from ?cat=
+  const c = new URLSearchParams(location.search).get("cat");
+  cat = chips.some((x) => x.dataset.filter === c) ? c : "all";
+  apply();
 })();
