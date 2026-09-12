@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konfigurator · Dämmstoffe Bauer</title>
+  <meta name="description" content="Der Dämmstoff-Konfigurator von Dämmstoffe Bauer: Bereich wählen, Fläche angeben und in drei Schritten eine passende Empfehlung mit Richtwerten erhalten." />
+  <meta name="theme-color" content="#74bc20" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2374bc20'/%3E%3Cg fill='none' stroke='white' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 11l7-5 7 5'/%3E%3Cpath d='M6.5 10v8h11v-8'/%3E%3Cpath d='M6.5 13h11M6.5 15.5h11'/%3E%3C/g%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Dämmstoffe Bauer – Startseite">
+        <img class="brand-logo" src="assets/img/logo.png" alt="Dämmstoffe Bauer" width="184" height="46" />
+      </a>
+      <nav class="nav" id="mainnav" aria-label="Hauptnavigation">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Startseite</a></li>
+          <li><a class="nav__link is-active" href="konfigurator.html">Konfigurator</a></li>
+          <li><a class="nav__link" href="sortiment.html">Sortiment</a></li>
+          <li><a class="nav__link" href="index.html#kontakt">Kontakt</a></li>
+          <li><a class="btn btn--accent" href="index.html#kontakt">Kontakt aufnehmen</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" data-theme-toggle aria-label="Farbschema wechseln">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
+        </button>
+        <a class="icon-btn desktop-only" href="index.html#kontakt" aria-label="Merkliste / Anfrage ansehen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 0 1 1 1v1h1.5A1.5 1.5 0 0 1 19 6.5V20a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6.5A1.5 1.5 0 0 1 6.5 5H8V4a1 1 0 0 1 1-1z"/><path d="M9 5h6"/><path d="M8.5 12l2 2 4-4"/></svg>
+          <span class="cart-count" aria-hidden="true">0</span>
+        </a>
+        <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainnav"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom:clamp(1.5rem,4vw,2.5rem)">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-head" style="max-width:760px">
+          <span class="eyebrow">Konfigurator</span>
+          <h1>Konfigurieren Sie Ihren Warenkorb für Ihr Haus</h1>
+          <p class="lead" style="margin-top:1rem">Unser Konfigurator bietet eine erste Orientierung für individualisierte Produkte. In drei Schritten zur passenden Empfehlung – kostenlos und unverbindlich.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-bottom:clamp(3rem,7vw,6rem)">
+      <div class="container" style="max-width:860px">
+        <div class="config-shell">
+          <ol class="config-progress">
+            <li class="active"><span class="dot">1</span><span class="label-text">Bereich</span></li>
+            <li><span class="dot">2</span><span class="label-text">Fläche</span></li>
+            <li><span class="dot">3</span><span class="label-text">Anspruch</span></li>
+            <li><span class="dot">4</span><span class="label-text">Empfehlung</span></li>
+          </ol>
+
+          <div class="config-body">
+            <!-- Step 1 -->
+            <div class="config-step active">
+              <h2>Welchen Bereich möchten Sie dämmen?</h2>
+              <p>Wählen Sie die Gebäudezone, für die Sie eine Dämmlösung suchen.</p>
+              <div class="choice-grid">
+                <button type="button" class="choice" data-bereich="wand">
+                  <span class="choice__icon"><img class="zone-ico" style="width:56px;height:34px;margin:0" src="assets/img/zones/walls.svg" alt="" aria-hidden="true" /></span>
+                  <strong>Wand</strong><span>Fassade &amp; Innenwand</span>
+                </button>
+                <button type="button" class="choice" data-bereich="dach">
+                  <span class="choice__icon"><img class="zone-ico" style="width:56px;height:34px;margin:0" src="assets/img/zones/roof.svg" alt="" aria-hidden="true" /></span>
+                  <strong>Dach</strong><span>Sparren &amp; Decke</span>
+                </button>
+                <button type="button" class="choice" data-bereich="boden">
+                  <span class="choice__icon"><img class="zone-ico" style="width:56px;height:34px;margin:0" src="assets/img/zones/floor.svg" alt="" aria-hidden="true" /></span>
+                  <strong>Boden</strong><span>Trittschall &amp; Wärme</span>
+                </button>
+                <button type="button" class="choice" data-bereich="keller">
+                  <span class="choice__icon"><img class="zone-ico" style="width:56px;height:34px;margin:0" src="assets/img/zones/basement.svg" alt="" aria-hidden="true" /></span>
+                  <strong>Keller</strong><span>Perimeter &amp; Decke</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="config-step">
+              <h2>Wie groß ist die Fläche?</h2>
+              <p>Geben Sie die ungefähre Fläche in Quadratmetern an – den Verschnitt berücksichtigen wir automatisch.</p>
+              <div class="field">
+                <label for="cfgArea">Zu dämmende Fläche: <strong style="color:var(--primary)"><span id="cfgAreaVal">25</span> m²</strong></label>
+                <div class="range-row">
+                  <span style="font-weight:700;color:var(--ink-faint)">5</span>
+                  <input type="range" id="cfgArea" min="5" max="300" step="1" value="25" />
+                  <span style="font-weight:700;color:var(--ink-faint)">300</span>
+                </div>
+              </div>
+              <p style="font-size:.9rem;color:var(--ink-faint)">Tipp: Sie kennen die Fläche noch nicht genau? Eine grobe Schätzung genügt für die erste Orientierung.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="config-step">
+              <h2>Welcher Anspruch passt zu Ihnen?</h2>
+              <p>Von solide und preisbewusst bis ökologisch – wir richten die Empfehlung danach aus.</p>
+              <div class="choice-grid">
+                <button type="button" class="choice" data-anspruch="standard">
+                  <span class="choice__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/></svg></span>
+                  <strong>Standard</strong><span>Solide &amp; preisbewusst</span><span class="choice__price">€ · gutes Preis-Leistung</span>
+                </button>
+                <button type="button" class="choice" data-anspruch="premium">
+                  <span class="choice__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 2.9 6.3 6.8.8-5 4.7 1.3 6.7L12 18l-6 3.5 1.3-6.7-5-4.7 6.8-.8z"/></svg></span>
+                  <strong>Premium</strong><span>Beste Dämmwerte</span><span class="choice__price">€€ · top Effizienz</span>
+                </button>
+                <button type="button" class="choice" data-anspruch="oeko">
+                  <span class="choice__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-5 6-9 6-9s.8 3 3 5 4 3 4 6a6 6 0 0 1-6 5z"/><path d="M11 20c0-4 2-7 5-9"/></svg></span>
+                  <strong>Ökologisch</strong><span>Naturdämmstoffe</span><span class="choice__price">€€€ · nachhaltig</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="config-step">
+              <div id="resultArea"></div>
+            </div>
+
+            <div class="config-nav">
+              <button class="btn btn--ghost" id="cfgBack" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+                Zurück
+              </button>
+              <button class="btn" id="cfgNext" type="button">Weiter
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <p style="text-align:center;margin-top:1.4rem;font-size:.9rem;color:var(--ink-faint)">
+          Hinweis: Alle Angaben sind unverbindliche Orientierungswerte. Für eine exakte Berechnung, U-Wert-Nachweise und Fördermittel beraten wir Sie gerne persönlich.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <img class="brand-logo" src="assets/img/logo.png" alt="Dämmstoffe Bauer" width="184" height="46" />
+          </a>
+          <p class="footer-about">Kontaktieren Sie uns und erhalten Sie erstklassige Beratung zur optimalen Dämmung Ihres Hauses – vom Keller bis zum Dach.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="konfigurator.html">Konfigurator</a></li>
+            <li><a href="sortiment.html">Sortiment</a></li>
+            <li><a href="index.html#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Sortiment</h4>
+          <ul>
+            <li><a href="sortiment.html?cat=wand">Wanddämmung</a></li>
+            <li><a href="sortiment.html?cat=dach">Dachdämmung</a></li>
+            <li><a href="sortiment.html?cat=boden">Bodendämmung</a></li>
+            <li><a href="sortiment.html?cat=keller">Kellerdämmung</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Max-Planck-Stra%C3%9Fe+7+69190+Walldorf" target="_blank" rel="noopener">Max-Planck-Straße 7<br />69190 Walldorf</a></li>
+            <li><a href="tel:+4962229484090">+49 6222 9484090</a></li>
+            <li><a href="mailto:info@bauer-daemmstoffe.de">info@bauer-daemmstoffe.de</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2025</span> Dämmstoffe Bauer · Alle Rechte vorbehalten.</span>
+        <span><a href="impressum.html">Impressum</a> · <a href="impressum.html#datenschutz">Datenschutz</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/konfigurator.js" defer></script>
+</body>
+</html>
